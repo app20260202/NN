@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>歡迎光臨</title>
     <style>
-        /* 基礎樣式清除與置中 */
         body {
             margin: 0;
             padding: 0;
@@ -16,7 +15,6 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
         
-        /* 限制手機觀看寬度，避免電腦版螢幕過大 */
         .container {
             max-width: 500px; 
             width: 100%;
@@ -26,23 +24,32 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.05);
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
         }
 
-        /* 照片樣式：自動適應寬度 */
+        /* 照片區域：讓所有照片寬度一致、垂直排列，無縫隙 */
+        .photo-gallery {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
         .main-photo {
             width: 100%;
             height: auto;
             display: block;
+            margin: 0;
+            padding: 0;
         }
 
-        /* LINE 按鈕容器：讓按鈕保持在畫面中下方 */
+        /* LINE 按鈕區：加上隱藏墊高，確保最後一張照片不會被按鈕蓋到 */
         .btn-container {
             padding: 30px 20px;
-            margin-top: auto; /* 將按鈕推至底部，確保不遮擋照片文字 */
+            background: #ffffff;
+            position: sticky;
+            bottom: 0; /* 讓按鈕固定在手機螢幕最下方，方便隨時點擊 */
+            box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
         }
 
-        /* LINE 經典綠色按鈕 */
         .line-btn {
             display: block;
             width: 100%;
@@ -59,21 +66,22 @@
             transition: all 0.2s ease;
         }
 
-        /* 點擊時的縮放與深色回饋效果 */
         .line-btn:active {
             transform: scale(0.96);
             background-color: #05b34c;
-            box-shadow: 0 2px 6px rgba(6, 199, 85, 0.2);
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- 主照片 -->
-        <img class="main-photo" src="index.html.jpg" alt="主視覺照片">
+        <!-- 照片藝廊：要在引號內換上你真正的照片名稱 -->
+        <div class="photo-gallery">
+            <img class="main-photo" src="index.html" alt="照片 1">
+            <img class="main-photo" src="index2.html" alt="照片 2">
+        </div>
         
-        <!-- LINE 按鈕區 -->
+        <!-- LINE 固定按鈕區 -->
         <div class="btn-container">
             <a href="https://line.me/ti/p/uDrzEd2crq" class="line-btn">點此加入 LINE 聯絡</a>
         </div>
